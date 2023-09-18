@@ -1,6 +1,5 @@
-</main>
 <footer>
-    <h1>Footer - Đuôi trang</h1>
+    Footer - đuôi trang
 </footer>
 </body>
 

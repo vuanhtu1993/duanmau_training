@@ -1,13 +1,15 @@
 <!-- Đóng vai trò là controller -->
 <?php
+
 // HEADER
 include './views/header.php';
 
-// Router
+// action (act)
 if(isset($_GET['act']) && $_GET['act'] != "") {
     $act = $_GET['act'];
     if($act == "product") {
-        include './views/product-detail.php';
+        // In ra man hinh trang chi tiet
+        include './views/product.php';
     }
 } else {
     include './views/home.php';

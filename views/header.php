@@ -9,5 +9,5 @@
 
 <body>
     <header>
-        HEADER - đầu trang
+        Header - đầu trang
     </header>

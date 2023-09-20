@@ -1,1 +1,1 @@
-<h1>Chi tiết sản phẩm</h1>
+<h1>Chi tiet san pham</h1>

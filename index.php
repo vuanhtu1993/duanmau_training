@@ -1,15 +1,17 @@
-<!-- Đóng vai trò là controller -->
+<!-- Vai trò controller -->
 <?php
-
 // HEADER
 include './views/header.php';
-
-// action (act)
-if(isset($_GET['act']) && $_GET['act'] != "") {
+// MAIN
+// Điều hướng trang
+if (isset($_GET['act']) && $_GET['act'] =! "") {
     $act = $_GET['act'];
-    if($act == "product") {
-        // In ra man hinh trang chi tiet
-        include './views/product.php';
+    switch($act) {
+        case "product": 
+            include './views/product.php';
+            break;
+        default:
+            include './views/home.php';
     }
 } else {
     include './views/home.php';

@@ -1,5 +1,5 @@
 <footer>
-    Footer - đuôi trang
+    FOOTER - đuôi trang
 </footer>
 </body>
 

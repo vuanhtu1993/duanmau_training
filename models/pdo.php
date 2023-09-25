@@ -1,7 +1,7 @@
 <?php
 
 function pdo_get_connection() {
-    $host = "mysql:localhost;dbname=duanmau/fa2023";
+    $host = "mysql:host=localhost;dbname=duanmau/fa2023";
     $username = "root";
     $password = "";
     try {
@@ -16,9 +16,9 @@ function pdo_get_connection() {
 function pdo_query($sql) {
     try {
         $conn = pdo_get_connection();
-        $statement = $conn->prepare($sql);
-        $statement->execute();
-        $rows = $statement->fetchAll();
+        $stat = $conn->prepare($sql);
+        $stat->execute();
+        $rows = $stat->fetchAll();
         return $rows;
 
     } catch(PDOException $e) {

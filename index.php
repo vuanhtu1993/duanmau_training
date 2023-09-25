@@ -1,13 +1,9 @@
 <!-- Vai trò controller - logic -->
 <!-- Điều hướng trang -->
 <?php
-// MODELS
-include './models/pdo.php';
-include './models/sanpham.php';
 // HEADER
 include './views/header.php';
 
-$list_sanpham = loadall_sanpham();
 // MAIN
 if(isset($_GET['act']) && $_GET['act'] != "") {
     $act = $_GET['act'];

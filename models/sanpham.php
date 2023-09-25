@@ -1,15 +1,7 @@
 <?php
-
-function loadall_sanpham($keyw = "") {
+function loadall_sanpham() {
     $sql = "select * from sanpham where 1";
-
-    if($keyw != "") {
-        $sql .= " and name like %$keyw%";
-    }
-
-    $sql .= " order by id desc";
-
-    return pdo_query($sql);
+    $list_sanpham = pdo_query($sql);
+    return $list_sanpham;
 }
-
 ?>

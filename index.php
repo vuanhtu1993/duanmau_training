@@ -1,8 +1,13 @@
 <!-- Vai trò controller - logic -->
 <!-- Điều hướng trang -->
 <?php
+// PDO
+include './models/pdo.php';
+include './models/sanpham.php';
 // HEADER
 include './views/header.php';
+
+$list_sanpham = loadall_sanpham();
 
 // MAIN
 if(isset($_GET['act']) && $_GET['act'] != "") {
@@ -13,6 +18,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
             break;
         default:
             include './views/home.php';
+            break;
     }
     
 } else {

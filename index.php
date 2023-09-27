@@ -7,6 +7,9 @@ include './models/sanpham.php';
 include './views/header.php';
 
 $list_sanpham = loadall_sanpham();
+echo "<pre>";
+var_dump($list_sanpham);
+die;
 // MAIN
 if(isset($_GET['act']) && $_GET['act'] != "") {
     $act = $_GET['act'];

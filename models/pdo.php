@@ -5,19 +5,18 @@ function pdo_get_connection() {
     $username = "root";
     $password = "";
     try {
-        $conn = new PDO($host, $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $conn;
+        $connect = new PDO($host, $username, $password);
+        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $connect;
     } catch(PDOException $e) {
         throw $e;
     }
 }
 
-// Query
 function pdo_query($sql) {
     try {
-        $conn = pdo_get_connection();
-        $stmt = $conn->prepare($sql);
+        $connect = pdo_get_connection();
+        $stmt = $connect->prepare($sql);
         $stmt->execute();
         $rows = $stmt->fetchAll();
         return $rows;

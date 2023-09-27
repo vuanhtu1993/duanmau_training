@@ -13,14 +13,14 @@ function pdo_get_connection() {
     }
 }
 
+// Query
 function pdo_query($sql) {
     try {
         $conn = pdo_get_connection();
-        $stat = $conn->prepare($sql);
-        $stat->execute();
-        $rows = $stat->fetchAll();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $rows = $stmt->fetchAll();
         return $rows;
-
     } catch(PDOException $e) {
         throw $e;
     }

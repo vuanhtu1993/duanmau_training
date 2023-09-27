@@ -1,9 +1,9 @@
 <?php
 
-function loadall_sanpham($keyword = "") {
+function loadall_sanpham($keyw = "") {
     $sql = "select * from sanpham where 1";
-    if ($keyword != "") {
-        $sql .= ' and name like "%'.$keyword.'%"';
+    if($keyw != "") {
+        $sql .= ' and name like "%'.$keyw.'%"';
     }
     $list_sanpham = pdo_query($sql);
     return $list_sanpham;

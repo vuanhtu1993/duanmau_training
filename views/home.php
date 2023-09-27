@@ -9,6 +9,7 @@
 
         <article class="items">
             <?php foreach($list_sanpham as $sp) {
+                // var_dump($sp);
                 $sp_img = "img/".$sp['img'];
                 echo '
                 <div class="box_items">

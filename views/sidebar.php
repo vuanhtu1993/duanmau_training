@@ -2,18 +2,27 @@
 
     <div class="mb">
         <div class="box_title">TÀI KHOẢN</div>
+        <?php if($_SESSION['user']) {
+            $user = $_SESSION['user'];
+        ?>
         <div class="box_content form_account">
-            <form action="#" method="POST"></form>
-            <h4>Tên đăng nhập</h4><br>
-            <input type="text" name="user" id="">
-            <h4>Mật khẩu</h4><br>
-            <input type="password" name="pass" id=""><br>
-            <input type="checkbox" name="" id="">Ghi nhớ tài khoản?
-            <br><input type="submit" value="Đăng nhập">
-            <li class="form_li"><a href="#">Quên mật khẩu</a></li>
-            <li class="form_li"><a href="#">Đăng kí thành viên</a></li>
-
+            <div>
+                <h3>Xin chao</h3>
+                <h2><?=$user['user']?></h2>
+            </div>
+            <?php } else { ?>
+            <form action="index.php?act=signin" method="POST">
+                <h4>Tên đăng nhập</h4><br>
+                <input type="text" name="user">
+                <h4>Mật khẩu</h4><br>
+                <input type="password" name="pass"><br>
+                <input type="checkbox" name="" id="">Ghi nhớ tài khoản?
+                <br><input type="submit" value="Đăng nhập" name="signin">
+                <li class="form_li"><a href="#">Quên mật khẩu</a></li>
+                <li class="form_li"><a href="?act=signup">Đăng kí thành viên</a></li>
+            </form>
         </div>
+        <?php } ?>
     </div>
     <div class="mb">
         <div class="box_title">DANH MỤC</div>

@@ -17,12 +17,12 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
             include './views/product.php';
             break;
         case "signup":
-            if(isset($_POST["signup"]) && $_POST["signup"]) {
+            if(isset($_POST['signup']) && $_POST['signup']) {
                 $email = $_POST['email'];
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
-                create_taikhoan($email,$user, $pass);
-                $thong_bao = "Đăng ký thành công";
+                create_taikhoan($email, $user, $pass);
+                header("location: index.php");
             }
             include './views/auth/signup.php';
             break;
@@ -30,13 +30,17 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
             if(isset($_POST['signin']) && $_POST['signin']) {
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
-                $current_user = check_user($user, $pass);
-                if(is_array($current_user)) {
-                    $_SESSION['user'] = $current_user;
+                $taikhoan = dang_nhap($user, $pass);
+                if(is_array($taikhoan)) {
+                    $_SESSION['user'] = $taikhoan;
                     $thong_bao = "Dang nhap thanh cong";
-                    header('location: index.php');
+                    if($taikhoan['role'] == 1) {
+                        header("location: /admin");
+                    } else {
+                        header("location: index.php");
+                    }
                 } else {
-                    $thong_bao = "Thong tin dang nhap khong chinh xac";
+                    $thong_bao = "Dang nhap that bai";
                 }
             }
             break;

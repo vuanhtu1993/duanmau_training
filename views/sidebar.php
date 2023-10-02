@@ -4,9 +4,8 @@
         <div class="box_title">TÀI KHOẢN</div>
         <?php if(isset($_SESSION['user'])) {
             $taikhoan = $_SESSION['user'];
-        ?>
-        <?= 'Xin chao '.$taikhoan['user']?>
-        <?php  } else {  ?>
+            echo "Xin chao".$taikhoan['user'];
+        } ?>
         <div class="box_content form_account">
             <form action="index.php?act=signin" method="POST">
                 <h4>Tên đăng nhập</h4><br>
@@ -19,7 +18,6 @@
                 <li class="form_li"><a href="?act=signup">Đăng kí thành viên</a></li>
             </form>
         </div>
-        <?php } ?>
     </div>
     <div class="mb">
         <div class="box_title">DANH MỤC</div>

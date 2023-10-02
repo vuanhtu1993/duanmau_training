@@ -21,7 +21,8 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                 $email = $_POST['email'];
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
-                create_taikhoan($email, $user, $pass);
+                dang_ky($email, $user, $pass);
+                $thong_bao = "Dang ky thanh cong";
                 header("location: index.php");
             }
             include './views/auth/signup.php';
@@ -32,12 +33,13 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                 $pass = $_POST['pass'];
                 $taikhoan = dang_nhap($user, $pass);
                 if(is_array($taikhoan)) {
-                    $_SESSION['user'] = $taikhoan;
                     $thong_bao = "Dang nhap thanh cong";
+                    // Luu session
+                    $_SESSION['user'] = $taikhoan;
                     if($taikhoan['role'] == 1) {
-                        header("location: /admin");
+                        header('location: /admin');
                     } else {
-                        header("location: index.php");
+                        header('location: index.php');
                     }
                 } else {
                     $thong_bao = "Dang nhap that bai";

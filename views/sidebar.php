@@ -2,10 +2,10 @@
 
     <div class="mb">
         <div class="box_title">TÀI KHOẢN</div>
-        <?php if(isset($_SESSION['user'])) {
-            $taikhoan = $_SESSION['user'];
-            echo "Xin chao".$taikhoan['user'];
-        } ?>
+        <?php if(isset($_SESSION['taikhoan'])) {
+            $taikhoan = $_SESSION['taikhoan'];
+            echo $taikhoan['user'];
+        }?>
         <div class="box_content form_account">
             <form action="index.php?act=signin" method="POST">
                 <h4>Tên đăng nhập</h4><br>

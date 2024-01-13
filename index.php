@@ -1,5 +1,13 @@
 <!-- Đóng vai trò là controller -->
 <?php
+// Model
+include("./models/pdo.php");
+include("./models/sanpham.php");
+
+$products = getAllProducts();
+var_dump($products);
+die;
+
 // Header
 include("./views/header.php");
 

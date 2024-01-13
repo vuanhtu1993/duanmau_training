@@ -1,20 +1,18 @@
-<!-- Đóng vai trò Controller -->
+<!-- Đóng vai trò là controller -->
 <?php
-// HEADER
-include './views/header.php';
+// Header
+include("./views/header.php");
 
-if(isset($_GET['act']) && $_GET['act'] != "") {
-    $act = $_GET['act'];
-    // Điều hướng trang
-    switch($act) {
-        case "product":
-            include './views/product-detail.php';
-            break;
+// Content
+// Logic điều hướng
+if(isset($_GET["act"]) && $_GET["act"] != ""){
+    if($_GET['act'] == "product"){
+        include("./views/product.php");
     }
 } else {
-    include './views/home.php';
+    include("./views/home.php");
 }
 
-// FOOTER
-include './views/footer.php';
+// Footer
+include("./views/footer.php");
 ?>

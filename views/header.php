@@ -9,6 +9,5 @@
 
 <body>
     <header>
-        <h1>Header - Đầu trang</h1>
+        <h2>Header</h2>
     </header>
-    <main>

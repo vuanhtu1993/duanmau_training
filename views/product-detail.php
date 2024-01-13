@@ -1,1 +1,0 @@
-<h1>Chi tiet san pham</h1>
